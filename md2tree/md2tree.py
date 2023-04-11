@@ -15,8 +15,8 @@ def parse_liststr(
                 current_node['children'] = parse_paragraph(current_lines)
                 nodes.append(current_node)
             current_node = node
-            current_node['children'] = []
-            current_lines = []
+            current_node['children'] = list()
+            current_lines = list()
         
         elif node := parse_list_item(line):
             if current_node and current_node['type'] != 'list':
