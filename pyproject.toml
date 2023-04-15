@@ -7,7 +7,7 @@ license = "Apach-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.8, <3.11"
+python = ">=3.8,<3.11"
 treelib = "^1.6.4"
 
 
