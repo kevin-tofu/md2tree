@@ -2,6 +2,7 @@
 # Convert Markdown to Tree (Dictonary)
 
  This module is going to convert markdown(.md) file into tree-structure-object.
+The tree object will be exported as treelib, which is defined on this repository (<https://github.com/caesar0301/treelib>)
 
 ## Set Up
 
