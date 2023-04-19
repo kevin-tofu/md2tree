@@ -14,6 +14,8 @@ poetry add git+https://github.com/kevin-tofu/md2tree.git
 
 ## Usage
 
+### How to convert markdown file into treelib
+
 ```python
 
 import md2tree
@@ -31,18 +33,19 @@ md2tree.tree2file(
 
 ```
 
- print function shows graph structure like below using treelib.
+### print function shows graph structure like below using treelib
 
 ```txt
+
 root
-├── 1
-│   ├── 2
-│   └── 3
-│       └── 4
-└── 5
+└── Convert Markdown to Tree (Dictonary)
+    ├── Set Up
+    └── Usage
+        └── Functions
+
 ```
 
- The function 'md2tree.tree2file' exports graph with data as json file.
+### The function 'md2tree.tree2file' exports graph with data as json file
 
 ```txt
 
@@ -64,7 +67,7 @@ root
 
 ```
 
-### Functions
+## Functions
 
 | Functions | Description |
 | --- | --- |
@@ -72,3 +75,4 @@ root
 | lines2tree |  |
 | tree2dict |  |
 | tree2file |  |
+
