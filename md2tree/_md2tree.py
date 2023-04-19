@@ -10,7 +10,8 @@ import treelib
 def create_tree(
     node_list: list[dict],
     text_list: list[list[str]],
-    text2node: bool = True
+    text2node: bool = True,
+    tag_is_title: bool=True
 ) -> treelib.Tree:
 
     mytree = treelib.Tree()
@@ -21,8 +22,12 @@ def create_tree(
     depth_prev = node_list[0]['depth']
     _node_list = node_list[1::]
 
+    idx2tags = dict(root=idx_prev)
     for i, node, text in zip(index_list[1::], node_list[1::], text_list[1::]):
+
         idx = str(i)
+        
+        idx2tags[idx] = idx if node['title'] == '' or not 'title' in node.keys() else node['title']
         # print('node-title:', node)
         # print('text:', text)
         if text2node:
@@ -49,12 +54,20 @@ def create_tree(
         else:
             raise ValueError('err')
 
-        mytree.create_node(
-            idx,
-            idx,
-            parent=idx_parent,
-            data=data
-        )
+        if tag_is_title:
+            mytree.create_node(
+                tag=idx2tags[idx],
+                identifier=idx2tags[idx],
+                parent=idx2tags[idx_parent],
+                data=data
+            )
+        else:
+            mytree.create_node(
+                tag=idx,
+                identifier=idx,
+                parent=idx_parent,
+                data=data
+            )
         depth_prev = node['depth']
         idx_prev = idx
 
@@ -62,7 +75,7 @@ def create_tree(
 
 
 def lines2tree(
-    lines: str,
+    lines: list[str],
     text2node: bool = True
 ) -> treelib.Tree:
     

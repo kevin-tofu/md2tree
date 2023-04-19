@@ -27,6 +27,7 @@ if __name__ == '__main__':
 
     depth_list = [0, 1, 1, 2, 2, 3, 3, 2, 2, 1, 3, 3, 1, 2, 2]
     node_list = [ dict(depth=d, title='') for d in depth_list]
+    # node_list = [ dict(depth=d, title=str(i)) for i, d in enumerate(depth_list)]
     index_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     text_list = [ [''] for _ in range(len(node_list))]
     mytree2 = md2tree.create_tree(node_list, text_list)
