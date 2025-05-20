@@ -2,13 +2,14 @@
 name = "md2tree"
 version = "0.1.0"
 description = ""
-authors = ["kohei <koheitech001@gmail.com>"]
+authors = ["Kohei Watanabe <koheitech001@gmail.com>"]
 license = "Apach-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.10,<3.14"
 treelib = "^1.6.4"
+pyproject-toml = "^0.1.0"
 
 
 [build-system]

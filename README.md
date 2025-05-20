@@ -7,8 +7,8 @@ The tree object will be exported as treelib, which is defined on this repository
 ## Set Up
 
 ```bash
-
-poetry add git+https://github.com/kevin-tofu/md2tree.git
+pip install md2tree
+poetry add md2tree
 
 ```
 
